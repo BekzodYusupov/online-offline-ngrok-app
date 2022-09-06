@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        tools:layout="@layout/screen_register"
+        android:id="@+id/registerScreen"
+        android:name="uz.gita.newauthcontactngrok.ui.screens.RegisterScreen"
+        android:label="RegisterScreen" >
+        <action
+            android:id="@+id/action_registerScreen_to_mainScreen"
+            app:destination="@id/mainScreen"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        tools:layout="@layout/screen_main"
+        android:id="@+id/mainScreen"
+        android:name="uz.gita.newauthcontactngrok.ui.screens.MainScreen"
+        android:label="MainScreen" >
+        <action
+            android:id="@+id/action_mainScreen_to_addScreen"
+            app:destination="@id/addScreen" />
+        <action
+            android:id="@+id/action_mainScreen_to_loginScreen"
+            app:destination="@id/loginScreen"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_mainScreen_to_editScreen"
+            app:destination="@id/editScreen" />
+    </fragment>
+    <fragment
+        tools:layout="@layout/screen_splash"
+        android:id="@+id/splashFragment"
+        android:name="uz.gita.authcontactngrok.ui.SplashFragment"
+        android:label="SplashFragment" >
+        <action
+            android:id="@+id/action_splashFragment_to_loginScreen"
+            app:destination="@id/loginScreen"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashFragment_to_mainScreen"
+            app:destination="@id/mainScreen"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        tools:layout="@layout/screen_login"
+        android:id="@+id/loginScreen"
+        android:name="uz.gita.newauthcontactngrok.ui.screens.LoginScreen"
+        android:label="LoginScreen" >
+        <action
+            android:id="@+id/action_loginScreen_to_registerScreen"
+            app:destination="@id/registerScreen" />
+        <action
+            android:id="@+id/action_loginScreen_to_mainScreen"
+            app:destination="@id/mainScreen"
+            app:popUpTo="@id/nav_graph" />
+    </fragment>
+    <fragment
+        tools:layout="@layout/screen_add"
+        android:id="@+id/addScreen"
+        android:name="uz.gita.newauthcontactngrok.ui.screens.AddScreen"
+        android:label="AddScreen" />
+    <fragment
+        android:id="@+id/editScreen"
+        android:name="uz.gita.newauthcontactngrok.ui.screens.EditScreen"
+        android:label="EditScreen" >
+        <argument
+            android:name="localData"
+            app:argType="uz.gita.newauthcontactngrok.data.models.LocalData" />
+    </fragment>
+</navigation>
